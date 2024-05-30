@@ -5,17 +5,25 @@ Plug 'github/copilot.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" I have 4 moods:
+"   1. idgaf mood: syntax off & colorscheme default
+"   2. too lazy to read: syntax on & colorscheme accent
+"   3. vibing: syntax on & colorscheme gruvbox
+"   4. presenting: syntax on & colorscheme ghdark
 Plug 'alligator/accent.vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'wojciechkepka/vim-github-dark'
 
 call plug#end()
 
+syntax off
 set background=dark
 let g:accent_darken = 1
 let g:accent_invert_status = 1
 let g:accent_no_bg = 1
 let g:accent_colour = 'orange'
-colorscheme accent
-
+ 
 set mouse=a
 
 nnoremap + <C-a>
