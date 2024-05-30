@@ -5,10 +5,16 @@ Plug 'github/copilot.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'alligator/accent.vim'
 
 call plug#end()
 
-syntax off
+set background=dark
+let g:accent_darken = 1
+let g:accent_invert_status = 1
+let g:accent_no_bg = 1
+let g:accent_colour = 'orange'
+colorscheme accent
 
 set mouse=a
 
