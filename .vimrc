@@ -15,15 +15,21 @@ Plug 'alligator/accent.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'wojciechkepka/vim-github-dark'
 
+" Academic writing
+Plug 'lervag/vimtex'
+
 call plug#end()
 
-syntax off
+syntax on
 set background=dark
 let g:accent_darken = 1
 let g:accent_invert_status = 1
 let g:accent_no_bg = 1
 let g:accent_colour = 'orange'
- 
+colorscheme gruvbox
+
+let g:vimtex_view_method = 'zathura'
+
 set mouse=a
 
 nnoremap + <C-a>
