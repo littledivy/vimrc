@@ -17,6 +17,14 @@ Plug 'wojciechkepka/vim-github-dark'
 
 " Academic writing
 Plug 'lervag/vimtex'
+let g:vimtex_compiler_latexmk = {
+      \ 'out_dir' : 'latexbuild',
+      \}
+
+" Org mode
+Plug 'tpope/vim-speeddating'
+Plug 'mattn/calendar-vim'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 
