@@ -45,6 +45,10 @@ let g:accent_colour = 'orange'
 colorscheme gruvbox
 
 let g:vimtex_view_method = 'zathura'
+" Use skim on macOS
+if has('mac')
+  let g:vimtex_view_method = 'skim'
+endif
 
 set mouse=a
 
