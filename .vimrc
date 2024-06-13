@@ -19,6 +19,14 @@ Plug 'wojciechkepka/vim-github-dark'
 Plug 'lervag/vimtex'
 let g:vimtex_compiler_latexmk = {
       \ 'out_dir' : 'latexbuild',
+      \ 'options' : [
+      \   '-shell-escape',
+      \   '-lualatex',
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \  ],
       \}
 
 " Org mode
