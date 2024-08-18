@@ -71,6 +71,7 @@ function! CheckBackspace() abort
 endfunction
 
 set mouse=a
+set backspace=indent,eol,start
 
 nnoremap + <C-a>
 nnoremap - <C-x>
