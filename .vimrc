@@ -34,6 +34,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'mattn/calendar-vim'
 Plug 'jceb/vim-orgmode'
 
+" LSP
+" :CocInstall coc-json coc-deno coc-rust-analyzer
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 syntax on
