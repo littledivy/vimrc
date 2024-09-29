@@ -6,6 +6,8 @@ Plug 'github/copilot.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'zivyangll/git-blame.vim'
+
 " I have 4 moods:
 "   1. idgaf mood: syntax off & colorscheme default
 "   2. too lazy to read: syntax on & colorscheme accent
@@ -70,6 +72,9 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+au BufRead,BufNewFile *.text set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'js=javascript', 'ruby']
+
 set mouse=a
 set backspace=indent,eol,start
 
@@ -88,6 +93,8 @@ nmap ;f :Files<CR>
 nmap ;r :Rg<CR>
 nmap \\ :Buffers<CR>
 nmap \r :Jump<CR>
+
+nnoremap ;g :<C-u>call gitblame#echo()<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
