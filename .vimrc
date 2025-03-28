@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'zivyangll/git-blame.vim'
+Plug 'tpope/vim-fugitive'
 
 " I have 4 moods:
 "   1. idgaf mood: syntax off & colorscheme default
@@ -49,6 +50,9 @@ let g:accent_invert_status = 1
 let g:accent_no_bg = 1
 let g:accent_colour = 'orange'
 colorscheme gruvbox
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 let g:vimtex_view_method = 'zathura'
 " Use skim on macOS
