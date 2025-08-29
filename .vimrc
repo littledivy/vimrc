@@ -44,7 +44,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on
-set background=dark
 let g:accent_darken = 1
 let g:accent_invert_status = 1
 let g:accent_no_bg = 1
@@ -59,6 +58,9 @@ let g:vimtex_view_method = 'zathura'
 if has('mac')
   let g:vimtex_view_method = 'skim'
 endif
+
+" stop CoC by default (but Coc is enabled)
+" let g:coc_start_at_startup=0
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -81,6 +83,9 @@ let g:markdown_fenced_languages = ['html', 'js=javascript', 'ruby']
 
 set mouse=a
 set backspace=indent,eol,start
+
+compiler cargo
+nnoremap ;b :make build -p deno --bin deno<CR>
 
 nnoremap + <C-a>
 nnoremap - <C-x>
