@@ -41,6 +41,9 @@ Plug 'jceb/vim-orgmode'
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Kitty
+Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
+
 call plug#end()
 
 syntax on
@@ -114,3 +117,9 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
