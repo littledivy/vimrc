@@ -32,11 +32,6 @@ let g:vimtex_compiler_latexmk = {
       \  ],
       \}
 
-" Org mode
-Plug 'tpope/vim-speeddating'
-Plug 'mattn/calendar-vim'
-Plug 'jceb/vim-orgmode'
-
 " LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -119,7 +114,3 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Disable arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
