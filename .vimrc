@@ -18,6 +18,8 @@ Plug 'alligator/accent.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'wojciechkepka/vim-github-dark'
 
+Plug 'justinmk/vim-sneak'
+
 " LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -26,6 +28,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
 
 call plug#end()
+
+let g:sneak#label = 1
+let g:sneak#s_next = 1
+
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 syntax on
 let g:accent_darken = 1
@@ -36,12 +44,6 @@ colorscheme gruvbox
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-
-let g:vimtex_view_method = 'zathura'
-" Use skim on macOS
-if has('mac')
-  let g:vimtex_view_method = 'skim'
-endif
 
 " stop CoC by default (but Coc is enabled)
 " let g:coc_start_at_startup=0
@@ -75,7 +77,7 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 
 " Window
-nmap ss :split<Return><C-w>w
+
 nmap sv :vsplit<Return><C-w>w
 nmap <Space> <C-w>w
 
@@ -98,5 +100,3 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Disable arrow keys
