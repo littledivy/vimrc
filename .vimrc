@@ -18,20 +18,6 @@ Plug 'alligator/accent.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'wojciechkepka/vim-github-dark'
 
-" Academic writing
-Plug 'lervag/vimtex'
-let g:vimtex_compiler_latexmk = {
-      \ 'out_dir' : 'latexbuild',
-      \ 'options' : [
-      \   '-shell-escape',
-      \   '-lualatex',
-      \   '-verbose',
-      \   '-file-line-error',
-      \   '-synctex=1',
-      \   '-interaction=nonstopmode',
-      \  ],
-      \}
-
 " LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
