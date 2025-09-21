@@ -9,6 +9,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
 
+Plug 'justinmk/vim-sneak'
+
 " I have 4 moods:
 "   1. idgaf mood: syntax off & colorscheme default
 "   2. too lazy to read: syntax on & colorscheme accent
@@ -18,14 +20,15 @@ Plug 'alligator/accent.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'wojciechkepka/vim-github-dark'
 
-Plug 'justinmk/vim-sneak'
-
 " LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Kitty
 Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
+
+" cargo install prr
+Plug 'danobi/prr', {'rtp': 'vim/'}
 
 call plug#end()
 
@@ -35,7 +38,7 @@ let g:sneak#s_next = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-syntax on
+syn on
 let g:accent_darken = 1
 let g:accent_invert_status = 1
 let g:accent_no_bg = 1
@@ -44,6 +47,8 @@ colorscheme gruvbox
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+
+se nu
 
 " stop CoC by default (but Coc is enabled)
 " let g:coc_start_at_startup=0
