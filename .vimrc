@@ -14,11 +14,8 @@ Plug 'justinmk/vim-sneak'
 " I have 4 moods:
 "   1. idgaf mood: syntax off & colorscheme default
 "   2. too lazy to read: syntax on & colorscheme accent
-"   3. vibing: syntax on & colorscheme gruvbox
-"   4. presenting: syntax on & colorscheme ghdark
+"   3. vibing: syntax on & colorscheme habamax
 Plug 'alligator/accent.vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'wojciechkepka/vim-github-dark'
 
 " LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
@@ -38,12 +35,15 @@ let g:sneak#s_next = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
+set ttimeout
+set timeoutlen=1000 ttimeoutlen=0
+
 syn on
 let g:accent_darken = 1
 let g:accent_invert_status = 1
 let g:accent_no_bg = 1
 let g:accent_colour = 'orange'
-colorscheme gruvbox
+colorscheme habamax
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
@@ -105,3 +105,5 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+tnoremap <nowait> <Esc> <Esc>
