@@ -113,4 +113,13 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+" Fix fzf hang when Esc
 tnoremap <nowait> <Esc> <Esc>
+
+" Disable arrow keys
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <PageUp> <NOP>
+nnoremap <PageDown> <NOP>
