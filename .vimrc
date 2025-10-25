@@ -1,8 +1,8 @@
 " Divy's vimrc
 
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let plug_path = '~/.vim/autoload/plug.vim'
+if empty(glob(plug_path))
+  silent execute '!curl -fLo '.plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -18,21 +18,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'justinmk/vim-sneak'
 
-" I have 4 moods:
-"   1. idgaf mood: syntax off & colorscheme default
-"   2. too lazy to read: syntax on & colorscheme accent
-"   3. vibing: syntax on & colorscheme habamax
-Plug 'alligator/accent.vim'
-
-" LSP
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Kitty
-Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
-
-" cargo install prr
-Plug 'danobi/prr', {'rtp': 'vim/'}
 
 call plug#end()
 
@@ -42,20 +29,19 @@ let g:sneak#s_next = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-set ttimeout
-set timeoutlen=1000 ttimeoutlen=0
+se ttimeout
+se timeoutlen=1000 ttimeoutlen=0
+
+se clipboard^=unnamed
+se clipboard^=unnamedplus
 
 syn on
-let g:accent_darken = 1
-let g:accent_invert_status = 1
-let g:accent_no_bg = 1
-let g:accent_colour = 'orange'
 colorscheme habamax
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
-se nu
+se relativenumber
 
 " stop CoC by default (but Coc is enabled)
 " let g:coc_start_at_startup=0
@@ -87,6 +73,9 @@ nnoremap ;b :make build -p deno --bin deno<CR>
 
 nnoremap + <C-a>
 nnoremap - <C-x>
+
+set tabstop=2 softtabstop=2 shiftwidth=2
+set autoindent smartindent
 
 " Window
 
