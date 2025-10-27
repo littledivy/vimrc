@@ -92,6 +92,8 @@ nmap \r :Jump<CR>
 
 nnoremap ;g :<C-u>call gitblame#echo()<CR>
 
+command! Retag !ctags -R --languages=Rust,JavaScript,TypeScript --exclude=target --exclude=node_modules --exclude=dist --exclude=build -f ./tags  $(git diff --name-only HEAD && git diff --name-only --cached)
+
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
