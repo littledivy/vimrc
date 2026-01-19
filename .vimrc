@@ -17,11 +17,14 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'justinmk/vim-sneak'
-
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " :CocInstall coc-json coc-deno coc-rust-analyzer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+let g:fzf_layout = { 'down': '~40%' }
+let $FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 let g:sneak#label = 1
 let g:sneak#s_next = 1
@@ -41,7 +44,7 @@ colorscheme habamax
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
-se relativenumber
+"se relativenumber
 
 " stop CoC by default (but Coc is enabled)
 " let g:coc_start_at_startup=0
@@ -114,3 +117,11 @@ nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <PageUp> <NOP>
 nnoremap <PageDown> <NOP>
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
